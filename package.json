@@ -1,0 +1,42 @@
+{
+  "name": "obrain",
+  "version": "2026.4.2",
+  "description": "Wire Obsidian to Claude Code in one command. Local, private, compounds over time.",
+  "bin": {
+    "obrain": "./bin/obrain.js"
+  },
+  "keywords": [
+    "obsidian",
+    "claude",
+    "claude-code",
+    "pkm",
+    "ai",
+    "notes",
+    "markdown",
+    "knowledge-base",
+    "productivity"
+  ],
+  "author": "wozacosta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wozacosta/obrain.git"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "vault-scaffold/",
+    "setup.sh",
+    "uninstall.sh",
+    "CLAUDE.md",
+    "memory.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
