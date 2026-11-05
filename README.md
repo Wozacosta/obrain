@@ -22,7 +22,7 @@ Or via npm:
 npx obrain
 ```
 
-Installs Obsidian + Claude Code if needed, sets up the brain structure, and drops in the slash commands. Two minutes. Re-runnable.
+Installs Homebrew, Obsidian and Claude Code if they're missing, sets up the brain structure, and installs the slash commands as Claude Code skills (in the brain's `.claude/skills/` and globally in `~/.claude/skills/`, so they work from any folder). Two minutes. Re-runnable.
 
 ### Got an existing Obsidian vault?
 
@@ -71,16 +71,19 @@ Then: `"digest and sort drop/"`
 
 ## Requirements
 
+- macOS (Linux and Windows aren't supported yet)
 - [Obsidian](https://obsidian.md) (free)
 - [Claude Code](https://claude.ai/code)
 
-Nothing else.
+The installer fetches whichever of these you don't have.
 
 ## Uninstall
 
 ```bash
-./uninstall.sh
+./uninstall.sh   # or: npx obrain uninstall
 ```
+
+Removes the skills, the `## obrain` block in `~/.claude/CLAUDE.md`, and the brain's scaffolding. Your notes stay unless you choose to delete them.
 
 ## Tests
 

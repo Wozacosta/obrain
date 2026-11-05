@@ -1,6 +1,6 @@
 ---
 name: recap
-description: End-of-session capture. Distills the conversation into a structured note and saves it to the best-matching folder in the brain.
+description: End-of-session capture. Distills the conversation into a structured note and saves it to the best-matching folder in the brain. Use when the user says "recap", "save this session", "write this down", or is wrapping up.
 ---
 
 Write a short note covering:

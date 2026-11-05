@@ -1,6 +1,6 @@
 ---
 name: brain-setup
-description: One-time onboarding for obrain. Two-step conversation — collects context, then builds a tailored brain with personalized CLAUDE.md, folders, and commands.
+description: One-time onboarding for obrain. Two-step conversation — collects context, then builds a tailored brain with personalized CLAUDE.md, folders, and commands. Use when the user says "brain setup", "set up my brain", or the brain's CLAUDE.md still has the placeholder Owner Profile.
 ---
 
 # brain-setup — Configure Your Brain
@@ -72,9 +72,7 @@ Archetype-based additions:
 Work + personal scope → add `personal/`
 
 ```bash
-mkdir -p drop daily weekly [archetype-folders] projects done \
-  .claude/skills/morning .claude/skills/weekly .claude/skills/recap \
-  .claude/skills/todo .claude/skills/[custom]
+mkdir -p drop daily weekly [archetype-folders] projects done .claude/skills/[custom]
 ```
 
 ### Open in Obsidian
@@ -105,15 +103,13 @@ When drop/ has stuff → offer to read and file it
 When a person or client is mentioned → check [relevant folder]
 ```
 
-### Write skills
+### Tailor the skills
 
-**`.claude/skills/morning/SKILL.md`:**
-Open today's note or create it. Check drop/ for new files. Check todo.md for due items. Surface what's pressing. Ask what to work on.
+The installer already put `morning`, `weekly`, `recap`, `todo`, `digest` and `import-vault` in
+`.claude/skills/`. Don't rewrite them. Edit only the folder names they mention
+(e.g. `refs/` → `courses/`) so they match the layout you just built.
 
-**`.claude/skills/recap/SKILL.md`:**
-Distill this session — what happened, what to remember, what's next. File to the right folder. Update memory.md with any new patterns.
-
-**Archetype-specific:**
+**Archetype-specific skill** (write a new `SKILL.md` with `name` and `description` frontmatter):
 - Operator → `.claude/skills/briefing/SKILL.md` — status across projects, people, decisions
 - Maker → `.claude/skills/context/SKILL.md` — deep-load a project's full state
 - Advisor → `.claude/skills/client/SKILL.md` — pull up everything about a client

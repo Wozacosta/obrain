@@ -44,6 +44,14 @@ done
 [ "$ct" -gt 0 ] && echo -e "  ${OK}+${RS} Removed $ct skills from ~/.claude/skills/" \
                  || echo -e "  ${DM}- nothing to remove${RS}"
 
+# the "## obrain" block /brain-setup appends to ~/.claude/CLAUDE.md
+GC="$HOME/.claude/CLAUDE.md"
+if [ -f "$GC" ] && grep -qx "## obrain" "$GC"; then
+  awk '$0 == "## obrain" { skip = 1; next } skip && /^On launch, read / { skip = 0; next } { skip = 0; print }' \
+    "$GC" > "$GC.tmp" && mv "$GC.tmp" "$GC"
+  echo -e "  ${OK}+${RS} Removed the obrain block from ~/.claude/CLAUDE.md"
+fi
+
 # ── 2. brain folder ─────────────────────────────────────────────────────────
 echo ""
 echo -e "${HI}[2/3] Brain folder${RS}"
@@ -109,8 +117,15 @@ fi
 if command -v claude &>/dev/null; then
   read -rp "  Remove Claude Code? [y/N]: " a
   if [[ "$a" =~ ^[Yy] ]]; then
-    npm list -g @anthropic-ai/claude-code &>/dev/null 2>&1 && npm uninstall -g @anthropic-ai/claude-code \
-      || echo -e "  ${WARN}! Can't auto-remove. Try: npm uninstall -g @anthropic-ai/claude-code${RS}"
+    # setup.sh uses the native installer; older installs came from npm
+    if [ -e "$HOME/.local/bin/claude" ]; then
+      rm -f "$HOME/.local/bin/claude" && rm -rf "$HOME/.local/share/claude"
+      echo -e "  ${OK}+${RS} Claude Code removed"
+    elif npm list -g @anthropic-ai/claude-code &>/dev/null; then
+      npm uninstall -g @anthropic-ai/claude-code && echo -e "  ${OK}+${RS} Claude Code removed"
+    else
+      echo -e "  ${WARN}! Can't auto-remove. See https://code.claude.com/docs/en/setup#uninstall-claude-code${RS}"
+    fi
   fi
 fi
 

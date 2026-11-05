@@ -17,12 +17,12 @@ const action = process.argv[2] || "setup";
 switch (action) {
   case "setup":
   case "install": {
-    if (platform === "darwin" || platform === "linux") {
+    if (platform === "darwin") {
       const sh = path.join(ROOT, "setup.sh");
       fs.chmodSync(sh, 0o755);
       run(`bash "${sh}"`).on("close", process.exit);
     } else {
-      console.error(`Unsupported platform: ${platform}. macOS and Linux only for now.`);
+      console.error(`Unsupported platform: ${platform}. macOS only for now.`);
       process.exit(1);
     }
     break;

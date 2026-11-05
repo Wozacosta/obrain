@@ -1,6 +1,6 @@
 ---
 name: weekly
-description: End-of-week review. Reads all daily notes from the past 7 days, surfaces patterns, wins, dropped balls, and open threads. Produces a weekly digest note and helps plan the week ahead.
+description: End-of-week review. Reads all daily notes from the past 7 days, surfaces patterns, wins, dropped balls, and open threads. Produces a weekly digest note and helps plan the week ahead. Use when the user says "weekly", "review my week", "plan next week", or it's Friday afternoon.
 ---
 
 # Weekly Review
@@ -12,7 +12,7 @@ Also scan any notes modified this week in projects/, refs/, and drop/.
 
 ## Step 2 — Produce the review
 
-Create weekly/YYYY-Www.md (e.g. weekly/2025-W14.md) with this structure:
+Create weekly/YYYY-Www.md (e.g. weekly/2026-W45.md) with this structure:
 
 # Week of [Monday date] → [Friday date]
 

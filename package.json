@@ -1,6 +1,6 @@
 {
   "name": "obrain",
-  "version": "2026.4.2",
+  "version": "2026.11.5",
   "description": "Wire Obsidian to Claude Code in one command. Local, private, compounds over time.",
   "bin": {
     "obrain": "./bin/obrain.js"

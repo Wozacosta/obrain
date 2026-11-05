@@ -1,6 +1,6 @@
 ---
 name: morning
-description: Start-of-day ritual. Opens or creates today's note, reads new files in drop/, checks todo.md for overdue items, and helps decide what to work on.
+description: Start-of-day ritual. Opens or creates today's note, reads new files in drop/, checks todo.md for overdue items, and helps decide what to work on. Use when the user says "morning", "start my day", "what's today", or opens a session at the start of the day.
 ---
 
 Check if daily/YYYY-MM-DD.md exists for today.
