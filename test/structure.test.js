@@ -15,6 +15,9 @@ describe("project structure", () => {
     "setup.sh",
     "uninstall.sh",
     "bin/obrain.js",
+    "lib/cli.mjs",
+    "lib/brain.mjs",
+    "lib/tools.mjs",
   ];
 
   for (const file of requiredFiles) {
@@ -43,16 +46,6 @@ describe("project structure", () => {
     assert.ok(content.startsWith("#!/usr/bin/env node"), "missing shebang");
   });
 
-  const scaffoldDirs = ["drop", "daily", "weekly", "projects", "refs", "done"];
-
-  for (const dir of scaffoldDirs) {
-    it(`vault-scaffold/${dir}/ exists`, () => {
-      assert.ok(
-        fs.existsSync(path.join(ROOT, "vault-scaffold", dir)),
-        `missing vault-scaffold/${dir}`
-      );
-    });
-  }
 });
 
 describe("package.json", () => {

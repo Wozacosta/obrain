@@ -128,17 +128,15 @@ The installer already put `morning`, `weekly`, `recap`, `todo`, `digest` and `im
 
 ## Part D — Context reach
 
-Ask:
+`npx obrain` already asked whether to load this brain in every Claude Code
+session. Check `~/.claude/CLAUDE.md` for a `## obrain` block. If it's there,
+update the path in it if the brain moved. If it isn't, ask once:
 
 ```
-One more thing — should Claude load your brain context everywhere?
-
-1. Yes, always (adds a line to ~/.claude/CLAUDE.md — recommended)
-2. Just give me the line and I'll paste it where I need it
-3. Only when I'm in this folder
+Should Claude load your brain context everywhere, not just in this folder? (y/n)
 ```
 
-If 1: append to `~/.claude/CLAUDE.md`:
+If yes, append to `~/.claude/CLAUDE.md`:
 ```
 ## obrain
 On launch, read [absolute path]/CLAUDE.md for owner context.
@@ -158,6 +156,9 @@ Commands:
   /recap     — end of any session
   /todo      — whenever
   /[custom]  — [one-liner]
+
+From any terminal, `npx obrain` opens a menu: start the day, open
+Obsidian, add files, check health.
 
 Have files to bring in?
   Drop them in drop/ and say: "digest and sort drop/"

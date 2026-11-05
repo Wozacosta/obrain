@@ -1,7 +1,7 @@
 {
   "name": "obrain",
   "version": "2026.11.5",
-  "description": "Wire Obsidian to Claude Code in one command. Local, private, compounds over time.",
+  "description": "Wire Obsidian to Claude Code with one command, then run your day from a small menu. Local, private, compounds over time.",
   "bin": {
     "obrain": "./bin/obrain.js"
   },
@@ -14,7 +14,9 @@
     "notes",
     "markdown",
     "knowledge-base",
-    "productivity"
+    "productivity",
+    "cli",
+    "tui"
   ],
   "author": "wozacosta",
   "license": "MIT",
@@ -24,8 +26,8 @@
   },
   "files": [
     "bin/",
+    "lib/",
     "skills/",
-    "vault-scaffold/",
     "setup.sh",
     "uninstall.sh",
     "CLAUDE.md",
@@ -34,9 +36,12 @@
     "README.md"
   ],
   "scripts": {
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js test/*.test.mjs"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1"
   }
 }
