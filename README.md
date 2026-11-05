@@ -8,7 +8,6 @@ obrain wires [Obsidian](https://obsidian.md) into [Claude Code](https://claude.a
 Your notes, files and projects live in one folder, and Claude reads it before you type a word.
 
 [![npm](https://img.shields.io/npm/v/obrain?color=7c3aed)](https://www.npmjs.com/package/obrain)
-![node 20.12+](https://img.shields.io/badge/node-20.12%2B-0e7490)
 ![macOS and Linux](https://img.shields.io/badge/macOS%20%7C%20Linux-supported-334155)
 ![local only](https://img.shields.io/badge/runs-locally-16a34a)
 
